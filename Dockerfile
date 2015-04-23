@@ -12,6 +12,8 @@ RUN apt-get update && \
 
 RUN php5enmod mcrypt &&  a2enmod rewrite && a2enmod headers && a2enmod cgi && a2enmod cgid
 
+RUN apt-get -y install dnsutils
+
 #RUN a2dismod mpm_prefork
 #RUN a2enmod mpm_worker
 
