@@ -19,7 +19,7 @@ RUN php5enmod mcrypt &&  a2enmod rewrite && a2enmod headers && a2enmod cgi && a2
 ADD php.ini /etc/php5/apache2/php.ini
 ADD mpm_prefork.conf /etc/apache2/mods-available/mpm_prefork.conf
 ADD default /etc/apache2/sites-available/default
-ADD lamp_start.sh /lamp_start.sh
+ADD apache_start.sh /apache_start.sh
 ADD msmtprc /etc/msmtprc
 
 
@@ -27,4 +27,4 @@ ADD msmtprc /etc/msmtprc
 
 EXPOSE 80
 
-CMD ["source /etc/apache2/envvars && exec /usr/sbin/apache2"]
+CMD ["/apache_start.sh"]
