@@ -7,7 +7,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
 	apt-get -y upgrade && \
-	DEBIAN_FRONTEND=noninteractive  apt-get -y -f -q install apache2 libapache2-mod-php5 php5-mysql php5-curl msmtp-mta libwww-perl libhtml-treebuilder-xpath-perl libfile-slurp-perl libdbd-mysql-perl libclass-dbi-perl wget php5-mcrypt && \
+	DEBIAN_FRONTEND=noninteractive  apt-get -y -f -q install apache2 libapache2-mod-php5 php5-mysql php5-curl msmtp-mta libwww-perl libhtml-treebuilder-xpath-perl libfile-slurp-perl libdbd-mysql-perl libclass-dbi-perl wget php5-mcrypt php5-gd && \
 	apt-get clean
 
 RUN php5enmod mcrypt &&  a2enmod rewrite && a2enmod headers && a2enmod cgi && a2enmod cgid
