@@ -20,7 +20,7 @@ RUN apt-get -y install dnsutils
 
 ADD php.ini /etc/php5/apache2/php.ini
 ADD mpm_prefork.conf /etc/apache2/mods-available/mpm_prefork.conf
-ADD default /etc/apache2/sites-available/default
+ADD 000-default.conf /etc/apache2/sites-available/000-default.conf
 ADD apache_start.sh /apache_start.sh
 ADD msmtprc /etc/msmtprc
 
